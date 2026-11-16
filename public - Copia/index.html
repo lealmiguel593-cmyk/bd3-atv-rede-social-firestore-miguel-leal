@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATIVIDADE - REDE SOCIAL</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="header_container">
+        <img src="./images/rede.png" alt="Ícone da rede social">
+        <h1>ATIVIDADE - REDE SOCIAL</h1>
+    </div>
+
+    <div class="button_post_container">
+        <button type="button" name="btn_post" id="btn_post">POST</button>
+    </div>
+
+    <main class="posts_container" id="posts_container" aria-live="polite">
+        <p id="loading_message">Carregando publicações...</p>
+    </main>
+
+    <!-- Formulário modal para criar uma publicação -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <button type="button" class="close" aria-label="Fechar">&times;</button>
+            <div class="form_post_container">
+                <h4>FAÇA UM POST</h4>
+                <form name="frm_post" id="frm_post">
+                    <input type="text" name="txt_titulo" id="txt_titulo"
+                        placeholder="TÍTULO DO POST" maxlength="100" required>
+                    <textarea name="txt_post" id="txt_post"
+                        placeholder="TEXTO DO POST" rows="5" maxlength="3000" required></textarea>
+                    <button type="submit" name="btn_postar" id="btn_postar">POSTAR</button>
+                </form>
+                <p id="form_message" role="status"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bibliotecas carregadas por CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.min.js"></script>
+    <script src="./app.js"></script>
+</body>
+</html>
